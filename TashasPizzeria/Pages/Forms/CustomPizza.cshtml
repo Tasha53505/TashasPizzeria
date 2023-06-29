@@ -1,0 +1,141 @@
+﻿@page
+@model TashasPizzeria.Pages.Forms.CustomPizzaModel
+
+@{
+}
+
+<div class="text-center container">
+    <h1>Create your own Pizza</h1>
+    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 col-4 bg-light ">
+        <input type="text" class="text-center" asp-for="Pizza.PizzaName" placeholder="Pizza Name" />
+        <br /><br />
+
+        <input type="checkbox" asp-for="Pizza.TomatoPizzaSauce" placeholder="Tomato Pizza Sauce" id="TomatoPizzaSauce" onchange="handleCheckboxChange('TomatoPizzaSauce', 'TomatoPizzaSauce')" />
+        <label for="TomatoPizzaSauce">Tomato Pizza Sauce</label>
+        <br /> 
+
+
+
+        <input type="checkbox" asp-for="Pizza.Cheese" placeholder="Pizza Cheese" id="PizzaCheese" onchange="handleCheckboxChange('PizzaCheese', 'PizzaCheese')" />
+        <label for="PizzaCheese">Cheese</label>
+
+        <br />
+
+        <input type="checkbox" asp-for="Pizza.Pepperoni" placeholder="Pepperoni" />Pepperoni
+        <br />
+
+        <input type="checkbox" asp-for="Pizza.Ham" placeholder="Ham" />Ham
+        <br />
+
+        <input type="checkbox" asp-for="Pizza.Capsicum" placeholder="Capsicum" />Capsicum
+        <br />
+
+        <input type="checkbox" asp-for="Pizza.Mushroom" placeholder="Mushroom" />Mushroom
+        <br /><br />
+
+        <button class="btn btnColor mt-1" type="submit">Order Pizza</button>
+    </form>
+
+=<div class="PizzaImageContainer container align-items-center canva">
+    <div class="pizzaBase"></div>
+    <div class="TomatoPizzaSauce"></div>
+    <div class="PizzaCheese"></div>
+    <div class="pizzaPepperoni1"></div>
+    <div class="pizzaPepperoni2"></div>
+    <div class="pizzaPepperoni3"></div>
+    <div class="pizzaPepperoni4"></div>
+    <div class="pizzaPepperoni5"></div>
+    <div class="pizzaPepperoni6"></div>
+</div>
+
+</div>
+
+
+    <style>
+        /*Pizza form CSS art*/
+
+        .canva {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pizzaBase {
+            width: 40vmin;
+            height: 40vmin;
+            background: #D1A843;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+    .active.TomatoPizzaSauce {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 37vmin;
+        height: 37vmin;
+        background: #CA4646;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pizza sauce appears on top */
+    }
+
+
+        .active .PizzaCheese {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30vmin;
+        height: 30vmin;
+        background: #F3E518;
+        border-radius: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pizza cheese appears on top */
+
+     
+        }
+
+    
+
+    </style>
+
+
+<script>
+    function handleCheckboxChange(checkboxId, elementClass) {
+        const checkbox = document.getElementById(checkboxId);
+        const element = document.querySelector(`.${elementClass}`);
+
+        if (checkbox.checked) {
+            element.classList.add('active');
+        } else {
+            element.classList.remove('active');
+        }
+    }
+</script>
+
+
+     @*
+    width: 30vmin;
+    height: 30vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+     *@
+           
+
+       

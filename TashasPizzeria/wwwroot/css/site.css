@@ -16,3 +16,40 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*Home page*/
+.mainImage {
+    width: 600px;
+}
+
+.btnColor {
+    background-color: #ff735c;
+    color: #ffffff;
+    border-color: #ff735c;
+}
+
+
+.mainSubtitle {
+    font-weight: 400;
+    letter-spacing : 1px;
+}
+
+
+.smallText {
+    text-align: right;
+font-size: 12px;
+}
+
+.makeYourOwnDiv {
+    background-color: #385A64;
+    color: #ffffff;
+    border-color: #385A64;
+    padding: 10px;
+    margin: 0;
+}
+
+.makeYourOwnText {
+    margin: 100px 0 20px 0;
+    color: white;
+}
+
