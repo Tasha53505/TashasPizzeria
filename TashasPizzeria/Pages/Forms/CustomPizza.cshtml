@@ -12,16 +12,20 @@
 
         <input type="checkbox" asp-for="Pizza.TomatoPizzaSauce" placeholder="Tomato Pizza Sauce" id="TomatoPizzaSauce" onchange="handleCheckboxChange('TomatoPizzaSauce', 'TomatoPizzaSauce')" />
         <label for="TomatoPizzaSauce">Tomato Pizza Sauce</label>
-        <br /> 
+        <br />
 
+        <input type="checkbox" asp-for="Pizza.Cheese" placeholder="PizzaCheese" id="PizzaCheese" onchange="handleCheckboxChange('PizzaCheese', 'PizzaCheese')" />
+        <label for="PizzaCheese">PizzaCheese</label>
 
-
-        <input type="checkbox" asp-for="Pizza.Cheese" placeholder="Pizza Cheese" id="PizzaCheese" onchange="handleCheckboxChange('PizzaCheese', 'PizzaCheese')" />
-        <label for="PizzaCheese">Cheese</label>
 
         <br />
 
-        <input type="checkbox" asp-for="Pizza.Pepperoni" placeholder="Pepperoni" />Pepperoni
+        @*<input type="checkbox" asp-for="Pizza.Pepperoni" placeholder="Pepperoni" id="PizzaPepperoni2" onchange="handleCheckboxChange('PizzaPepperoni2', 'PizzaPepperoni2')" />
+        <label for="PizzaPepperoni2">PizzaPepperoni2</label>
+        *@
+        <input type="checkbox" asp-for="Pizza.Pepperoni" placeholder="Pepperoni" id="PepperoniCheckbox" onchange="handlePepperoniCheckboxChange()" />
+        <label for="PepperoniCheckbox">Pepperoni</label>
+
         <br />
 
         <input type="checkbox" asp-for="Pizza.Ham" placeholder="Ham" />Ham
@@ -36,41 +40,41 @@
         <button class="btn btnColor mt-1" type="submit">Order Pizza</button>
     </form>
 
-=<div class="PizzaImageContainer container align-items-center canva">
-    <div class="pizzaBase"></div>
-    <div class="TomatoPizzaSauce"></div>
-    <div class="PizzaCheese"></div>
-    <div class="pizzaPepperoni1"></div>
-    <div class="pizzaPepperoni2"></div>
-    <div class="pizzaPepperoni3"></div>
-    <div class="pizzaPepperoni4"></div>
-    <div class="pizzaPepperoni5"></div>
-    <div class="pizzaPepperoni6"></div>
-</div>
+    =<div class="PizzaImageContainer container align-items-center canva">
+        <div class="pizzaBase"></div>
+        <div class="TomatoPizzaSauce"></div>
+        <div class="PizzaCheese"></div>
+        <div class="PizzaPepperoni1"></div>
+        <div class="PizzaPepperoni2"></div>
+        <div class="PizzaPepperoni3"></div>
+        <div class="PizzaPepperoni4"></div>
+        <div class="PizzaPepperoni5"></div>
+        <div class="PizzaPepperoni6"></div>
+    </div>
 
 </div>
 
 
-    <style>
-        /*Pizza form CSS art*/
+<style>
+    /*Pizza form CSS art*/
 
-        .canva {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
+    .canva {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
 
-        .pizzaBase {
-            width: 40vmin;
-            height: 40vmin;
-            background: #D1A843;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+    .pizzaBase {
+        width: 40vmin;
+        height: 40vmin;
+        background: #D1A843;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 
     .active.TomatoPizzaSauce {
         position: absolute;
@@ -89,7 +93,7 @@
     }
 
 
-        .active .PizzaCheese {
+    .active.PizzaCheese {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -103,13 +107,97 @@
         justify-content: center;
         flex-direction: column;
         z-index: 1; /* Ensures the pizza cheese appears on top */
+    }
 
-     
-        }
 
-    
+    .active.PizzaPepperoni1 {
+        width: 5vmin;
+        height: 5vmin;
+        background: #850000;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 
-    </style>
+    .active.PizzaPepperoni2 {
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 30%;
+        left: calc(50% - 2.5vmin); /* Adjust the left position to position it on the edge */
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaPepperoni3 {
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: calc(50% - 20.5vmin); /* Adjust the left position to position it on the edge */
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaPepperoni4 {
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: calc(100% - 40.5vmin); /* Adjust the left position to position it on the edge */
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaPepperoni5 {
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: calc(100% - 40.5vmin); /* Adjust the left position to position it on the edge */
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaPepperoni6 {
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: calc(100% - 2.5vmin); /* Adjust the left position to position it on the edge */
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    }
+</style>
 
 
 <script>
@@ -123,19 +211,21 @@
             element.classList.remove('active');
         }
     }
+
+
+    function handlePepperoniCheckboxChange() {
+        const checkbox = document.getElementById('PepperoniCheckbox');
+        const pepperoniElements = document.querySelectorAll('.PizzaPepperoni2, .PizzaPepperoni3, .PizzaPepperoni4, .PizzaPepperoni5, .PizzaPepperoni6');
+
+        pepperoniElements.forEach(element => {
+            if (checkbox.checked) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    }
 </script>
 
 
-     @*
-    width: 30vmin;
-    height: 30vmin;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 
-
-     *@
-           
-
-       
