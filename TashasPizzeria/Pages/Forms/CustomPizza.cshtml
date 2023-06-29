@@ -14,23 +14,29 @@
         <label for="TomatoPizzaSauce">Tomato Pizza Sauce</label>
         <br /> 
 
+        <input type="checkbox" asp-for="Pizza.Cheese" placeholder="PizzaCheese" id="PizzaCheese" onchange="handleCheckboxChange('PizzaCheese', 'PizzaCheese')" />
+        <label for="PizzaCheese">PizzaCheese</label>
 
-
-        <input type="checkbox" asp-for="Pizza.Cheese" placeholder="Pizza Cheese" id="PizzaCheese" onchange="handleCheckboxChange('PizzaCheese', 'PizzaCheese')" />
-        <label for="PizzaCheese">Cheese</label>
 
         <br />
 
-        <input type="checkbox" asp-for="Pizza.Pepperoni" placeholder="Pepperoni" />Pepperoni
+     
+        <input type="checkbox" asp-for="Pizza.Pepperoni" placeholder="Pepperoni" id="PepperoniCheckbox" onchange="handlePepperoniCheckboxChange()" />
+        <label for="PepperoniCheckbox">Pepperoni</label>
+
         <br />
 
-        <input type="checkbox" asp-for="Pizza.Ham" placeholder="Ham" />Ham
+        <input type="checkbox" asp-for="Pizza.Ham" placeholder="Ham" id="HamCheckbox" onchange="handleHamCheckboxChange()" />
+        <label for="HamCheckbox">Ham</label>
+
         <br />
 
-        <input type="checkbox" asp-for="Pizza.Capsicum" placeholder="Capsicum" />Capsicum
+        <input type="checkbox" asp-for="Pizza.Capsicum" placeholder="Capsicum" id="CapsicumCheckbox" onchange="handleCapsicumCheckboxChange()" />
+        <label for="CapsicumCheckbox">Capsicum</label>
         <br />
 
-        <input type="checkbox" asp-for="Pizza.Mushroom" placeholder="Mushroom" />Mushroom
+        <input type="checkbox" asp-for="Pizza.Mushroom" placeholder="Mushroom" id="MushroomCheckbox" onchange="handleMushroomCheckboxChange()" />
+        <label for="MushroomCheckbox">Mushroom</label>
         <br /><br />
 
         <button class="btn btnColor mt-1" type="submit">Order Pizza</button>
@@ -40,12 +46,37 @@
     <div class="pizzaBase"></div>
     <div class="TomatoPizzaSauce"></div>
     <div class="PizzaCheese"></div>
-    <div class="pizzaPepperoni1"></div>
-    <div class="pizzaPepperoni2"></div>
-    <div class="pizzaPepperoni3"></div>
-    <div class="pizzaPepperoni4"></div>
-    <div class="pizzaPepperoni5"></div>
-    <div class="pizzaPepperoni6"></div>
+    <div class="PizzaPepperoni1"></div>
+    <div class="PizzaPepperoni2"></div>
+    <div class="PizzaPepperoni3"></div>
+    <div class="PizzaPepperoni4"></div>
+    <div class="PizzaPepperoni5"></div>
+    <div class="PizzaPepperoni6"></div>
+
+    <div class="PizzaHam1"> </div>
+    <div class="PizzaHam2"></div>
+    <div class="PizzaHam3"></div>
+    <div class="PizzaHam4"></div>
+    <div class="PizzaHam5"></div>
+    <div class="PizzaHam6"></div>
+
+
+    <div class="PizzaCapsicum1"> </div>
+    <div class="PizzaCapsicum2"></div>
+    <div class="PizzaCapsicum3"></div>
+    <div class="PizzaCapsicum4"></div>
+    <div class="PizzaCapsicum5"></div>
+        <div class="PizzaCapsicum6"></div>
+        <div class="PizzaCapsicum7"></div>
+
+
+    <div class="PizzaMushroom1"> </div>
+    <div class="PizzaMushroom2"></div>
+    <div class="PizzaMushroom3"></div>
+    <div class="PizzaMushroom4"></div>
+    <div class="PizzaMushroom5"></div>
+    <div class="PizzaMushroom6"></div
+
 </div>
 
 </div>
@@ -70,6 +101,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            position: relative;
         }
 
     .active.TomatoPizzaSauce {
@@ -89,7 +121,7 @@
     }
 
 
-        .active .PizzaCheese {
+        .active.PizzaCheese {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -103,13 +135,433 @@
         justify-content: center;
         flex-direction: column;
         z-index: 1; /* Ensures the pizza cheese appears on top */
-
-     
         }
 
-    
 
-    </style>
+    .active.PizzaPepperoni1 {
+        /* Position the first pepperoni element */
+        position: absolute;
+        bottom: 70%;
+        left: 48%;
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .active.PizzaPepperoni2 {
+        /* Position the second pepperoni element */
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .active.PizzaPepperoni3 {
+        /* Position the third pepperoni element */
+        position: absolute;
+        bottom: 55%;
+        left: 43%;
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+
+
+    .active.PizzaPepperoni4 {
+        position: absolute;
+        top: 70%;
+        left: 45%;
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaPepperoni5 {
+        position: absolute;
+        bottom: 30%;
+        right: 42%;
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaPepperoni6 {
+        position: absolute;
+        top: 20%;
+        left: 55%;
+        width: 5vmin;
+        height: 5vmin;
+        background: #8F1B1B;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+
+
+
+
+    .active.PizzaHam1 {
+        position: absolute;
+        top: 21%;
+        left: 45%;
+        width: 3vmin;
+        height: 3vmin;
+        background: #ff87c9;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+
+    .active.PizzaHam2 {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 3vmin;
+        height: 3vmin;
+        background: #ff87c9;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaHam3 {
+        position: absolute;
+        bottom: 20%;
+        right: 55%;
+        width: 3vmin;
+        height: 3vmin;
+        background: #ff87c9;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaHam4 {
+        position: absolute;
+        bottom: 21%;
+        left: 54%;
+        width: 3vmin;
+        height: 3vmin;
+        background: #ff87c9;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaHam5 {
+        position: absolute;
+        top: 48%;
+        left: 41%;
+        width: 3vmin;
+        height: 3vmin;
+        background: #ff87c9;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+    .active.PizzaHam6 {
+        position: absolute;
+        top: 20%;
+        left: 55%;
+        width: 3vmin;
+        height: 3vmin;
+        background: #ff87c9;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+    }
+
+
+
+
+
+
+    .active.PizzaCapsicum1 {
+        position: absolute;
+        top: 45%;
+        left: 46%;
+        background: #f56f42;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+
+        width: 3.5vmin; /* Adjust the width of the arc */
+        height: 2.5vmin; /* Adjust the height of the arc */
+        border-radius: 50% / 100% 100% 0% 0%; /* Adjust the border-radius values to create the desired arc shape */
+            
+
+    }
+
+    .active.PizzaCapsicum2 {
+        position: absolute;
+        bottom: 20%;
+        left: 55%;
+        background: #f56f42;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+
+        width: 3.5vmin; /* Adjust the width of the arc */
+        height: 2.5vmin; /* Adjust the height of the arc */
+        border-radius: 50% / 100% 100% 0% 0%; /* Adjust the border-radius values to create the desired arc shape */
+    }
+
+
+    .active.PizzaCapsicum3 {
+        position: absolute;
+        top: 36%;
+        left: 40%;
+        background: #1adb41 ;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+
+        width: 3.5vmin; /* Adjust the width of the arc */
+        height: 2.5vmin; /* Adjust the height of the arc */
+        border-radius: 50% / 100% 100% 0% 0%; /* Adjust the border-radius values to create the desired arc shape */
+    }
+
+
+    .active.PizzaCapsicum4 {
+        position: absolute;
+        bottom: 43%;
+        right: 44.8%;
+        background: #1adb41;
+
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+
+        width: 3.5vmin; /* Adjust the width of the arc */
+        height: 2.5vmin; /* Adjust the height of the arc */
+        border-radius: 50% / 100% 100% 0% 0%; /* Adjust the border-radius values to create the desired arc shape */
+    }
+
+
+    .active.PizzaCapsicum5 {
+        position: absolute;
+        top: 13%;
+        left: 48%;
+        background: #1adb41;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+
+        width: 3.5vmin; /* Adjust the width of the arc */
+        height: 2.5vmin; /* Adjust the height of the arc */
+        border-radius: 50% / 100% 100% 0% 0%; /* Adjust the border-radius values to create the desired arc shape */
+    }
+
+
+    .active.PizzaCapsicum6 {
+        position: absolute;
+        top: 23.5%;
+        left: 51%;
+        background: #e34c46;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+
+        width: 3.5vmin; /* Adjust the width of the arc */
+        height: 2.5vmin; /* Adjust the height of the arc */
+        border-radius: 50% / 100% 100% 0% 0%; /* Adjust the border-radius values to create the desired arc shape */
+    }
+
+    .active.PizzaCapsicum7 {
+        position: absolute;
+        bottom: 14%;
+        right: 54%;
+        background: #1adb41;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1; /* Ensures the pepperoni cheese appears on top */
+
+        width: 3.5vmin; /* Adjust the width of the arc */
+        height: 2.5vmin; /* Adjust the height of the arc */
+        border-radius: 50% / 100% 100% 0% 0%; /* Adjust the border-radius values to create the desired arc shape */
+    }
+
+
+
+
+
+    .active.PizzaMushroom1 {
+        /* Position the first Mushroom element */
+        position: absolute;
+        bottom: 70%;
+        left: 48%;
+        width: 2.5vmin;
+        height: 2.5vmin;
+        background: #8f5635;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .active.PizzaMushroom2 {
+        /* Position the first Mushroom element */
+        position: absolute;
+        bottom: 20%;
+        left: 48%;
+       width: 2.5vmin;
+        height: 2.5vmin;
+        background: #8f5635;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .active.PizzaMushroom3 {
+        /* Position the first Mushroom element */
+        position: absolute;
+        bottom: 30%;
+        left: 42%;
+       width: 2.5vmin;
+        height: 2.5vmin;
+        background: #8f5635;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .active.PizzaMushroom4 {
+        /* Position the first Mushroom element */
+        position: absolute;
+        bottom: 20%;
+        left: 56%;
+       width: 2.5vmin;
+        height: 2.5vmin;
+        background: #8f5635;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .active.PizzaMushroom5 {
+        /* Position the first Mushroom element */
+        position: absolute;
+        bottom: 70%;
+        left: 51%;
+       width: 2.5vmin;
+        height: 2.5vmin;
+        background: #8f5635;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .active.PizzaMushroom6 {
+        /* Position the first Mushroom element */
+        position: absolute;
+        bottom: 72%;
+        left: 41.5%;
+        width: 2.5vmin;
+        height: 2.5vmin;
+        background: #8f5635;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+
+
+</style>
 
 
 <script>
@@ -123,19 +575,83 @@
             element.classList.remove('active');
         }
     }
+
+
+    function handlePepperoniCheckboxChange() {
+        const checkbox = document.getElementById('PepperoniCheckbox');
+        const pepperoniElements = document.querySelectorAll('.PizzaPepperoni1, .PizzaPepperoni2, .PizzaPepperoni3, .PizzaPepperoni4, .PizzaPepperoni5, .PizzaPepperoni6');
+
+        pepperoniElements.forEach(element => {
+            if (checkbox.checked) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    }
+
+
+    function handleHamCheckboxChange() {
+        const checkbox = document.getElementById('HamCheckbox');
+        const hamElements = document.querySelectorAll('.PizzaHam1, .PizzaHam2, .PizzaHam3, .PizzaHam4, .PizzaHam5, .PizzaHam6');
+
+        hamElements.forEach(element => {
+            if (checkbox.checked) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    }
+
+    function handleCapsicumCheckboxChange() {
+        const checkbox = document.getElementById('CapsicumCheckbox');
+        const capsicumElements = document.querySelectorAll('.PizzaCapsicum1, .PizzaCapsicum2, .PizzaCapsicum3, .PizzaCapsicum4, .PizzaCapsicum5, .PizzaCapsicum6, .PizzaCapsicum7');
+
+        capsicumElements.forEach(element => {
+        if (checkbox.checked) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    }
+
+    function handleMushroomCheckboxChange() {
+        const checkbox = document.getElementById('MushroomCheckbox');
+        const mushroomElements = document.querySelectorAll('.PizzaMushroom1, .PizzaMushroom2, .PizzaMushroom3, .PizzaMushroom4, .PizzaMushroom5, .PizzaMushroom6');
+    
+            mushroomElements.forEach(element => {
+                if (checkbox.checked) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+    }
+
 </script>
 
+  @*
 
-     @*
-    width: 30vmin;
-    height: 30vmin;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+I successfully developed a pizza application using ASP.NET Core, MVC, Razor Pages, custom CSS, and JavaScript. This project involved creating a local database for managing pizza orders, implementing a user-friendly interface with custom CSS, and enhancing functionality with JavaScript. I ensured the application's security, conducted thorough testing, and delivered a high-quality product. This experience strengthened my expertise in ASP.NET Core development and equipped me with valuable skills in database integration, MVC architecture, and web development frameworks.
 
 
-     *@
-           
+
+I was extensively involved in the development of a dog training website using a CMS (WordPress), where I successfully implemented various features and technologies to create a dynamic and user-friendly platform. This project included the integration of WooCommerce pages to enable the purchase of memberships and classes, enhancing the website's functionality. Additionally, I utilized custom CSS and PHP to create a visually appealing design with a blue and white palette, ensuring a cohesive and professional look throughout the site.
+
+In collaboration with the client, I actively engaged in hands-on interaction to understand their specific requirements and preferences. This involved creating sitemaps and wireframes to outline the website's structure and functionality before proceeding with the development process. I also developed mockup websites to present visual representations of the final product, allowing the client to provide valuable feedback and make informed decisions.
+
+One of the key features I implemented was an automatically updated list of classes that are full, ensuring that users have up-to-date information on class availability and preventing overbooking. Additionally, I incorporated a news and updates area to keep visitors informed about the latest happenings and announcements in the dog training community.
+
+To enhance user engagement and provide a personalized experience, I developed a members area where registered users could access exclusive content, resources, and additional features. This area allowed members to interact with their instructors, ask questions, and receive personalized guidance.
+
+Throughout the project, effective communication and collaboration with the client were maintained to ensure their satisfaction and meet their specific needs. Regular meetings and feedback sessions were conducted to address any concerns or modifications required, resulting in a successful and impactful website.
+
+In conclusion, my experience in developing a dog training website in WordPress with WooCommerce integration, custom CSS and PHP, responsive web design, and interactive features such as a members area and contact with instructors has equipped me with valuable skills in web development and client interaction. I am confident that my expertise in creating visually appealing and functional websites will be an asset to future projects requiring similar technologies and requirements.
+
+  
+
+*@
 
        
